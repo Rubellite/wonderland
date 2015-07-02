@@ -1,0 +1,11 @@
+header {
+    background-attachment: fixed;
+    background-image: url("../imgs/alice.jpg");
+    background-position: 0 -180px;
+    background-size: cover;
+}
+
+.navbar-brand, 
+.nav li a {
+    color: #ffffff;
+}
