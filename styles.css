@@ -1,11 +1,97 @@
-header {
-    background-attachment: fixed;
-    background-image: url("../imgs/alice.jpg");
-    background-position: 0 -180px;
-    background-size: cover;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.navbar-brand, 
-.nav li a {
-    color: #ffffff;
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    background-color: #ffdcdc;
+}
+
+header {
+    background-image: url("alice.jpg");
+    background-attachment: fixed;
+    background-position: 0 -150px;
+    background-size: cover;
+    box-sizing: border-box;
+    color: #c8fadf;
+    height: 600px;
+    padding: 60px 50px;
+}
+
+h1 {
+    text-shadow: 1px 1px #120f0f;
+}
+ul {
+    text-shadow: 1px 1px #120f0f;
+}
+
+/*floating moves the text to different sides of the website ul = unorganized list h1 = larger font and ul = list of things */
+
+nav h1 {
+    float: left;
+}
+
+nav ul {
+    float: right;
+}
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    border: 1px solid #fff;
+    color: #c8fadf;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 960px;
+}
+
+.slogan {
+    margin-top: 325px;
+    text-align: center;
+}
+.slogan {
+    text-shadow: 1px 1px #120f0f;
+}
+
+.slogan .emphasis {
+    font-style: italic;
+    font-weight: bold;
+}
+.slogan .advertisement {
+    font-style: italic;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.slogan .sign-up-form {
+    background-color: #fff;
+    border: 1px solid #740303;
+    margin: 0 auto;
+    width: 300px;
+}
+.slogan .sign-up-form input {
+    border: none;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.slogan .sign-up-form input[type="text"] {
+    float: left;
+    outline: none;
+}
+.slogan .sign-up-form input[type="submit"] {
+    background-color: #c8fadf;
+    color: #030101;
+    float: right;
 }
