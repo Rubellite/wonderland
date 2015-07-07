@@ -1,0 +1,74 @@
+//comments go here//
+/*values start with var, as in variable. they are boxes that contain some sort of value. use the values to do the math whee. */
+//a function is a repeat set of tasks that will be called on several times. give it values, and it will give you something in return//
+//NaN=not a number; ! negates, or is the opposite of the statement//
+
+'use strict';
+
+var currentNumber = "";
+var lastAction = "";
+var currentTotal = 0;
+
+function setConsole(value) {
+    $("#console").html(value);
+}
+
+function calculate(existingValue, newValue, action) {
+    var calculatedValue = existingValue;
+    
+    if (!isNaN(newValue)) {
+        if (action === "add") {
+            calculatedValue = existingValue + newValue;
+        }
+        else if (action === "sub") {
+            calculatedValue = existingValue - newValue;
+        }
+        
+        if (existingValue !== 0) {
+            if (action === "times") {
+                calculatedValue = existingValue * newValue;
+            }
+            else if (action === "divide") {
+                calculatedValue = existingValue / newValue;
+            }
+        }
+        else {
+            calculatedValue = newValue;
+        }
+    }
+    //a string has no numerical value//
+    
+    return calculatedValue;
+}
+
+$(function () {
+    $(".number").click(function() {
+        currentNumber += $(this).val();
+        setConsole(currentNumber);
+    });
+    
+    $(".action").click(function() {
+        var newValue = parseFloat(currentNumber);
+        var action = $(this).val();
+        
+        if (action !== "equals" && action !== "AC") {
+            lastAction = action;
+        }
+
+        currentNumber = "";
+        
+        if (action === "AC") {
+            currentNumber = "";
+            currentTotal = 0;
+            setConsole(0);
+        }
+        else if (action === "equals") {
+            currentTotal = calculate(currentTotal, newValue, lastAction);
+            setConsole(currentTotal);
+        }
+        else {
+            currentTotal = calculate(currentTotal, newValue, action);
+            setConsole(currentTotal);
+        }
+    });
+});
